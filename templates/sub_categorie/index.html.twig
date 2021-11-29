@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SubCategorie index{% endblock %}
+
+{% block body %}
+    <h1>SubCategorie index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dranken</th>
+                <th>Warme_dranken</th>
+                <th>Hapjes</th>
+                <th>Voorgerecht</th>
+                <th>Hoofdgerecht</th>
+                <th>Nagerecht</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sub_categorie in sub_categories %}
+            <tr>
+                <td>{{ sub_categorie.id }}</td>
+                <td>{{ sub_categorie.dranken }}</td>
+                <td>{{ sub_categorie.warmeDranken }}</td>
+                <td>{{ sub_categorie.hapjes }}</td>
+                <td>{{ sub_categorie.voorgerecht }}</td>
+                <td>{{ sub_categorie.hoofdgerecht }}</td>
+                <td>{{ sub_categorie.nagerecht }}</td>
+                <td>
+                    <a href="{{ path('sub_categorie_show', {'id': sub_categorie.id}) }}">show</a>
+                    <a href="{{ path('sub_categorie_edit', {'id': sub_categorie.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('sub_categorie_new') }}">Create new</a>
+{% endblock %}

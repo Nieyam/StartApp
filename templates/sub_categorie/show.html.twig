@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SubCategorie{% endblock %}
+
+{% block body %}
+    <h1>SubCategorie</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sub_categorie.id }}</td>
+            </tr>
+            <tr>
+                <th>Dranken</th>
+                <td>{{ sub_categorie.dranken }}</td>
+            </tr>
+            <tr>
+                <th>Warme_dranken</th>
+                <td>{{ sub_categorie.warmeDranken }}</td>
+            </tr>
+            <tr>
+                <th>Hapjes</th>
+                <td>{{ sub_categorie.hapjes }}</td>
+            </tr>
+            <tr>
+                <th>Voorgerecht</th>
+                <td>{{ sub_categorie.voorgerecht }}</td>
+            </tr>
+            <tr>
+                <th>Hoofdgerecht</th>
+                <td>{{ sub_categorie.hoofdgerecht }}</td>
+            </tr>
+            <tr>
+                <th>Nagerecht</th>
+                <td>{{ sub_categorie.nagerecht }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('sub_categorie_index') }}">back to list</a>
+
+    <a href="{{ path('sub_categorie_edit', {'id': sub_categorie.id}) }}">edit</a>
+
+    {{ include('sub_categorie/_delete_form.html.twig') }}
+{% endblock %}
