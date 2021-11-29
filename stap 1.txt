@@ -1,0 +1,7 @@
+Install:
+- Visual Studio Code
+- Xampp 7.3.31
+- open CMD
+- composer install
+- create symfony project
+- run Xampp
