@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MenuController extends AbstractController
 {
     /**
-     * @Route("/", name="menu_index", methods={"GET"})
+     * @Route("/", name="Menu_index", methods={"GET"})
      */
     public function index(MenuRepository $menuRepository): Response
     {
@@ -27,7 +27,7 @@ class MenuController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="menu_new", methods={"GET", "POST"})
+     * @Route("/new", name="Menu_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -49,7 +49,7 @@ class MenuController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="menu_show", methods={"GET"})
+     * @Route("/{id}", name="Menu_show", methods={"GET"})
      */
     public function show(Menu $menu): Response
     {
@@ -59,7 +59,7 @@ class MenuController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="menu_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="Menu_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Menu $menu, EntityManagerInterface $entityManager): Response
     {
@@ -79,7 +79,7 @@ class MenuController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="menu_delete", methods={"POST"})
+     * @Route("/{id}", name="Menu_delete", methods={"POST"})
      */
     public function delete(Request $request, Menu $menu, EntityManagerInterface $entityManager): Response
     {

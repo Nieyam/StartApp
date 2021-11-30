@@ -23,8 +23,8 @@
                 <td>{{ menu.prijs }}</td>
                 <td>{{ menu.omschrijving }}</td>
                 <td>
-                    <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
-                    <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a>
+                    <a href="{{ path('Menu_show', {'id': menu.id}) }}">show</a>
+                    <a href="{{ path('Menu_edit', {'id': menu.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('menu_new') }}">Create new</a>
+    <a href="{{ path('Menu_new') }}">Create new</a>
 {% endblock %}

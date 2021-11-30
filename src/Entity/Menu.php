@@ -35,12 +35,12 @@ class Menu
     private $omschrijving;
 
     /**
-     * @ORM\OneToMany(targetEntity=Bestellingen::class, mappedBy="menu")
+     * @ORM\OneToMany(targetEntity=Bestellingen::class, mappedBy="Menu")
      */
     private $bestellingens;
 
     /**
-     * @ORM\ManyToOne(targetEntity=categorien::class, inversedBy="menus")
+     * @ORM\ManyToOne(targetEntity=categorien::class, inversedBy="Menus")
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorien;

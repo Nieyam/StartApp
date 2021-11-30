@@ -45,7 +45,7 @@ class Reservering
     private $telefoon;
 
     /**
-     * @ORM\OneToMany(targetEntity=Bestellingen::class, mappedBy="reservering")
+     * @ORM\OneToMany(targetEntity=Bestellingen::class, mappedBy="Reservering")
      */
     private $bestellingens;
 
