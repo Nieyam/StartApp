@@ -12,12 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/categorien")
+ * @Route("/Categorien")
  */
 class CategorienController extends AbstractController
 {
     /**
-     * @Route("/", name="categorien_index", methods={"GET"})
+     * @Route("/", name="Categorien_index", methods={"GET"})
      */
     public function index(CategorienRepository $categorienRepository): Response
     {
@@ -27,7 +27,7 @@ class CategorienController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="categorien_new", methods={"GET", "POST"})
+     * @Route("/new", name="Categorien_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -49,7 +49,7 @@ class CategorienController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="categorien_show", methods={"GET"})
+     * @Route("/{id}", name="Categorien_show", methods={"GET"})
      */
     public function show(Categorien $categorien): Response
     {
@@ -59,7 +59,7 @@ class CategorienController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="categorien_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="Categorien_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Categorien $categorien, EntityManagerInterface $entityManager): Response
     {
@@ -79,7 +79,7 @@ class CategorienController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="categorien_delete", methods={"POST"})
+     * @Route("/{id}", name="Categorien_delete", methods={"POST"})
      */
     public function delete(Request $request, Categorien $categorien, EntityManagerInterface $entityManager): Response
     {

@@ -12,12 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/bestellingen")
+ * @Route("/Bestellingen")
  */
 class BestellingenController extends AbstractController
 {
     /**
-     * @Route("/", name="bestellingen_index", methods={"GET"})
+     * @Route("/", name="Bestellingen_index", methods={"GET"})
      */
     public function index(BestellingenRepository $bestellingenRepository): Response
     {
@@ -27,7 +27,7 @@ class BestellingenController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="bestellingen_new", methods={"GET", "POST"})
+     * @Route("/new", name="Bestellingen_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -49,7 +49,7 @@ class BestellingenController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="bestellingen_show", methods={"GET"})
+     * @Route("/{id}", name="Bestellingen_show", methods={"GET"})
      */
     public function show(Bestellingen $bestellingen): Response
     {
@@ -59,7 +59,7 @@ class BestellingenController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="bestellingen_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="Bestellingen_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Bestellingen $bestellingen, EntityManagerInterface $entityManager): Response
     {
@@ -79,7 +79,7 @@ class BestellingenController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="bestellingen_delete", methods={"POST"})
+     * @Route("/{id}", name="Bestellingen_delete", methods={"POST"})
      */
     public function delete(Request $request, Bestellingen $bestellingen, EntityManagerInterface $entityManager): Response
     {

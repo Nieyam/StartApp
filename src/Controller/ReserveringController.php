@@ -12,12 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/reservering")
+ * @Route("/Reservering")
  */
 class ReserveringController extends AbstractController
 {
     /**
-     * @Route("/", name="reservering_index", methods={"GET"})
+     * @Route("/", name="Reservering_index", methods={"GET"})
      */
     public function index(ReserveringRepository $reserveringRepository): Response
     {
@@ -27,7 +27,7 @@ class ReserveringController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="reservering_new", methods={"GET", "POST"})
+     * @Route("/new", name="Reservering_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -49,7 +49,7 @@ class ReserveringController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="reservering_show", methods={"GET"})
+     * @Route("/{id}", name="Reservering_show", methods={"GET"})
      */
     public function show(Reservering $reservering): Response
     {
@@ -59,7 +59,7 @@ class ReserveringController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="reservering_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="Reservering_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Reservering $reservering, EntityManagerInterface $entityManager): Response
     {
@@ -79,7 +79,7 @@ class ReserveringController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="reservering_delete", methods={"POST"})
+     * @Route("/{id}", name="Reservering_delete", methods={"POST"})
      */
     public function delete(Request $request, Reservering $reservering, EntityManagerInterface $entityManager): Response
     {
