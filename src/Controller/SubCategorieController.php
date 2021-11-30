@@ -21,7 +21,7 @@ class SubCategorieController extends AbstractController
      */
     public function index(SubCategorieRepository $subCategorieRepository): Response
     {
-        return $this->render('sub_categorie/index.html.twig', [
+        return $this->render('Sub_categorie/index.html.twig', [
             'sub_categories' => $subCategorieRepository->findAll(),
         ]);
     }
@@ -39,10 +39,10 @@ class SubCategorieController extends AbstractController
             $entityManager->persist($subCategorie);
             $entityManager->flush();
 
-            return $this->redirectToRoute('sub_categorie_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Sub_categorie_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('sub_categorie/new.html.twig', [
+        return $this->renderForm('Sub_categorie/new.html.twig', [
             'sub_categorie' => $subCategorie,
             'form' => $form,
         ]);
@@ -53,7 +53,7 @@ class SubCategorieController extends AbstractController
      */
     public function show(SubCategorie $subCategorie): Response
     {
-        return $this->render('sub_categorie/show.html.twig', [
+        return $this->render('Sub_categorie/show.html.twig', [
             'sub_categorie' => $subCategorie,
         ]);
     }
@@ -69,10 +69,10 @@ class SubCategorieController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('sub_categorie_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Sub_categorie_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('sub_categorie/edit.html.twig', [
+        return $this->renderForm('Sub_categorie/edit.html.twig', [
             'sub_categorie' => $subCategorie,
             'form' => $form,
         ]);
@@ -88,6 +88,6 @@ class SubCategorieController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('sub_categorie_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('Sub_categorie_index', [], Response::HTTP_SEE_OTHER);
     }
 }

@@ -21,7 +21,7 @@ class CategorienController extends AbstractController
      */
     public function index(CategorienRepository $categorienRepository): Response
     {
-        return $this->render('categorien/index.html.twig', [
+        return $this->render('Categorien/index.html.twig', [
             'categoriens' => $categorienRepository->findAll(),
         ]);
     }
@@ -39,10 +39,10 @@ class CategorienController extends AbstractController
             $entityManager->persist($categorien);
             $entityManager->flush();
 
-            return $this->redirectToRoute('categorien_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Categorien_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('categorien/new.html.twig', [
+        return $this->renderForm('Categorien/new.html.twig', [
             'categorien' => $categorien,
             'form' => $form,
         ]);
@@ -53,7 +53,7 @@ class CategorienController extends AbstractController
      */
     public function show(Categorien $categorien): Response
     {
-        return $this->render('categorien/show.html.twig', [
+        return $this->render('Categorien/show.html.twig', [
             'categorien' => $categorien,
         ]);
     }
@@ -69,10 +69,10 @@ class CategorienController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('categorien_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Categorien_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('categorien/edit.html.twig', [
+        return $this->renderForm('Categorien/edit.html.twig', [
             'categorien' => $categorien,
             'form' => $form,
         ]);
@@ -88,6 +88,6 @@ class CategorienController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('categorien_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('Categorien_index', [], Response::HTTP_SEE_OTHER);
     }
 }

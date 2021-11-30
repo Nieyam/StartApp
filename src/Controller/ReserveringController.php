@@ -21,7 +21,7 @@ class ReserveringController extends AbstractController
      */
     public function index(ReserveringRepository $reserveringRepository): Response
     {
-        return $this->render('reservering/index.html.twig', [
+        return $this->render('Reservering/index.html.twig', [
             'reserverings' => $reserveringRepository->findAll(),
         ]);
     }
@@ -39,10 +39,10 @@ class ReserveringController extends AbstractController
             $entityManager->persist($reservering);
             $entityManager->flush();
 
-            return $this->redirectToRoute('reservering_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Reservering_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('reservering/new.html.twig', [
+        return $this->renderForm('Reservering/new.html.twig', [
             'reservering' => $reservering,
             'form' => $form,
         ]);
@@ -53,7 +53,7 @@ class ReserveringController extends AbstractController
      */
     public function show(Reservering $reservering): Response
     {
-        return $this->render('reservering/show.html.twig', [
+        return $this->render('Reservering/show.html.twig', [
             'reservering' => $reservering,
         ]);
     }
@@ -69,10 +69,10 @@ class ReserveringController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('reservering_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Reservering_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('reservering/edit.html.twig', [
+        return $this->renderForm('Reservering/edit.html.twig', [
             'reservering' => $reservering,
             'form' => $form,
         ]);
@@ -88,6 +88,6 @@ class ReserveringController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('reservering_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('Reservering_index', [], Response::HTTP_SEE_OTHER);
     }
 }

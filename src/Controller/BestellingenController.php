@@ -21,7 +21,7 @@ class BestellingenController extends AbstractController
      */
     public function index(BestellingenRepository $bestellingenRepository): Response
     {
-        return $this->render('bestellingen/index.html.twig', [
+        return $this->render('Bestellingen/index.html.twig', [
             'bestellingens' => $bestellingenRepository->findAll(),
         ]);
     }
@@ -39,10 +39,10 @@ class BestellingenController extends AbstractController
             $entityManager->persist($bestellingen);
             $entityManager->flush();
 
-            return $this->redirectToRoute('bestellingen_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Bestellingen_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('bestellingen/new.html.twig', [
+        return $this->renderForm('Bestellingen/new.html.twig', [
             'bestellingen' => $bestellingen,
             'form' => $form,
         ]);
@@ -53,7 +53,7 @@ class BestellingenController extends AbstractController
      */
     public function show(Bestellingen $bestellingen): Response
     {
-        return $this->render('bestellingen/show.html.twig', [
+        return $this->render('Bestellingen/show.html.twig', [
             'bestellingen' => $bestellingen,
         ]);
     }
@@ -69,10 +69,10 @@ class BestellingenController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('bestellingen_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Bestellingen_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('bestellingen/edit.html.twig', [
+        return $this->renderForm('Bestellingen/edit.html.twig', [
             'bestellingen' => $bestellingen,
             'form' => $form,
         ]);
@@ -88,6 +88,6 @@ class BestellingenController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('bestellingen_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('Bestellingen_index', [], Response::HTTP_SEE_OTHER);
     }
 }
