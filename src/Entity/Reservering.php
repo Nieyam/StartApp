@@ -107,6 +107,11 @@ class Reservering
         return $this;
     }
 
+    #TooString__ function
+    public function __toString() {
+        return $this->naam;
+    }
+
     public function getTelefoon(): ?string
     {
         return $this->telefoon;
