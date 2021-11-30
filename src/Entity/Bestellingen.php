@@ -18,13 +18,13 @@ class Bestellingen
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=reservering::class, inversedBy="bestellingens")
+     * @ORM\ManyToOne(targetEntity=Reservering::class, inversedBy="bestellingens")
      * @ORM\JoinColumn(nullable=false)
      */
     private $reservering;
 
     /**
-     * @ORM\ManyToOne(targetEntity=menu::class, inversedBy="bestellingens")
+     * @ORM\ManyToOne(targetEntity=Menu::class, inversedBy="bestellingens")
      * @ORM\JoinColumn(nullable=false)
      */
     private $menu;
