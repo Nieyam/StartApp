@@ -29,8 +29,8 @@
                 <td>{{ sub_categorie.hoofdgerecht }}</td>
                 <td>{{ sub_categorie.nagerecht }}</td>
                 <td>
-                    <a href="{{ path('sub_categorie_show', {'id': sub_categorie.id}) }}">show</a>
-                    <a href="{{ path('sub_categorie_edit', {'id': sub_categorie.id}) }}">edit</a>
+                    <a href="{{ path('Sub_categorie_show', {'id': sub_categorie.id}) }}">show</a>
+                    <a href="{{ path('Sub_categorie_edit', {'id': sub_categorie.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('sub_categorie_new') }}">Create new</a>
+    <a href="{{ path('Sub_categorie_new') }}">Create new</a>
 {% endblock %}

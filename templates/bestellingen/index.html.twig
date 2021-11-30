@@ -17,8 +17,8 @@
             <tr>
                 <td>{{ bestellingen.id }}</td>
                 <td>
-                    <a href="{{ path('bestellingen_show', {'id': bestellingen.id}) }}">show</a>
-                    <a href="{{ path('bestellingen_edit', {'id': bestellingen.id}) }}">edit</a>
+                    <a href="{{ path('Bestellingen_show', {'id': bestellingen.id}) }}">show</a>
+                    <a href="{{ path('Bestellingen_edit', {'id': bestellingen.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -29,5 +29,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('bestellingen_new') }}">Create new</a>
+    <a href="{{ path('Bestellingen_new') }}">Create new</a>
 {% endblock %}

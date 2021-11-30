@@ -27,8 +27,8 @@
                 <td>{{ reservering.naam }}</td>
                 <td>{{ reservering.telefoon }}</td>
                 <td>
-                    <a href="{{ path('reservering_show', {'id': reservering.id}) }}">show</a>
-                    <a href="{{ path('reservering_edit', {'id': reservering.id}) }}">edit</a>
+                    <a href="{{ path('Reservering_show', {'id': reservering.id}) }}">show</a>
+                    <a href="{{ path('Reservering_edit', {'id': reservering.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('reservering_new') }}">Create new</a>
+    <a href="{{ path('Reservering_new') }}">Create new</a>
 {% endblock %}

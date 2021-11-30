@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Bestellingen</h1>
 
-    {{ include('bestellingen/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('Bestellingen/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('bestellingen_index') }}">back to list</a>
+    <a href="{{ path('Bestellingen_index') }}">back to list</a>
 
-    {{ include('bestellingen/_delete_form.html.twig') }}
+    {{ include('Bestellingen/_delete_form.html.twig') }}
 {% endblock %}
