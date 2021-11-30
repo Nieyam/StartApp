@@ -50,7 +50,7 @@ class SubCategorie
     private $nagerecht;
 
     /**
-     * @ORM\OneToMany(targetEntity=categorien::class, mappedBy="subCategorie")
+     * @ORM\OneToMany(targetEntity=categorien::class, mappedBy="SubCategorie")
      */
     private $categorien;
 

@@ -30,13 +30,13 @@ class Categorien
     private $dranken;
 
     /**
-     * @ORM\ManyToOne(targetEntity=SubCategorie::class, inversedBy="categorien")
+     * @ORM\ManyToOne(targetEntity=SubCategorie::class, inversedBy="Categorien")
      * @ORM\JoinColumn(nullable=false)
      */
     private $subCategorie;
 
     /**
-     * @ORM\OneToMany(targetEntity=Menu::class, mappedBy="categorien")
+     * @ORM\OneToMany(targetEntity=Menu::class, mappedBy="Categorien")
      */
     private $menus;
 

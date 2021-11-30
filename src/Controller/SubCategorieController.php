@@ -12,22 +12,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/Sub/categorie")
+ * @Route("/Sub/Categorie")
  */
 class SubCategorieController extends AbstractController
 {
     /**
-     * @Route("/", name="Sub_categorie_index", methods={"GET"})
+     * @Route("/", name="Sub_Categorie_index", methods={"GET"})
      */
     public function index(SubCategorieRepository $subCategorieRepository): Response
     {
-        return $this->render('Sub_categorie/index.html.twig', [
+        return $this->render('Sub_Categorie/index.html.twig', [
             'sub_categories' => $subCategorieRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/new", name="Sub_categorie_new", methods={"GET", "POST"})
+     * @Route("/new", name="Sub_Categorie_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -39,27 +39,27 @@ class SubCategorieController extends AbstractController
             $entityManager->persist($subCategorie);
             $entityManager->flush();
 
-            return $this->redirectToRoute('Sub_categorie_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Sub_Categorie_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('Sub_categorie/new.html.twig', [
+        return $this->renderForm('Sub_Categorie/new.html.twig', [
             'sub_categorie' => $subCategorie,
             'form' => $form,
         ]);
     }
 
     /**
-     * @Route("/{id}", name="Sub_categorie_show", methods={"GET"})
+     * @Route("/{id}", name="Sub_Categorie_show", methods={"GET"})
      */
     public function show(SubCategorie $subCategorie): Response
     {
-        return $this->render('Sub_categorie/show.html.twig', [
+        return $this->render('Sub_Categorie/show.html.twig', [
             'sub_categorie' => $subCategorie,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="Sub_categorie_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="Sub_Categorie_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, SubCategorie $subCategorie, EntityManagerInterface $entityManager): Response
     {
@@ -69,17 +69,17 @@ class SubCategorieController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('Sub_categorie_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Sub_Categorie_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('Sub_categorie/edit.html.twig', [
+        return $this->renderForm('Sub_Categorie/edit.html.twig', [
             'sub_categorie' => $subCategorie,
             'form' => $form,
         ]);
     }
 
     /**
-     * @Route("/{id}", name="Sub_categorie_delete", methods={"POST"})
+     * @Route("/{id}", name="Sub_Categorie_delete", methods={"POST"})
      */
     public function delete(Request $request, SubCategorie $subCategorie, EntityManagerInterface $entityManager): Response
     {
@@ -88,6 +88,6 @@ class SubCategorieController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('Sub_categorie_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('Sub_Categorie_index', [], Response::HTTP_SEE_OTHER);
     }
 }
